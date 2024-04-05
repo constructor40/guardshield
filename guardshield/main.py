@@ -16,11 +16,11 @@ class AntiDebugger:
         self.settings = settings
         self.dll = dll
         a = threading.Thread(target=self.cpp_detector)
-        a.start()
         a.daemon = True
+        a.start()
         b = threading.Thread(target=self.file_monitor)
-        b.start()
         b.daemon = True
+        b.start()
 
     def cpp_detector(self) -> None:
         while True:
